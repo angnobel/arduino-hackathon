@@ -27,7 +27,6 @@ void setup() {
   bool updateWithDelays = false;
   bool leadingZeros = true;
   bool disableDecPoint = true;
-  tone(9, 200,4);
 
   sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments,
   updateWithDelays, leadingZeros, disableDecPoint);
@@ -58,11 +57,11 @@ void loop() {
       
   } else {
       if (allow) {
-          if (buttonSensorVal == 0 && startNumber != 180) {
-              startNumber = 180;
+          if (buttonSensorVal == 0 && startNumber != 300) {
+              startNumber = 300;
               sevseg.setNumber(startNumber,0);
               allow = false;
-          } else if (buttonSensorVal == 0 && startNumber == 180) {
+          } else if (buttonSensorVal == 0 && startNumber == 300) {
               state = false;
               allow = false;
           }
